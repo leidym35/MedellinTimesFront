@@ -10,6 +10,9 @@
                 <strong>{{publicidades.titulo}}</strong>
                 <br>
                 {{publicidades.imagen}}
+                <br>
+                <a (click)="onDelete(publicidades.id)"  class="btn btn-md btn-danger">Eliminar </a>
             </li>
         </ul>
+    
     </div>

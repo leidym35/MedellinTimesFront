@@ -5,8 +5,12 @@
 	<label>Titulo</label>
     
 	<input type="text" #titulo="ngModel" name="titulo" [(ngModel)]="model.titulo" class="form-control"/>
+    <br/>
+    <label>Noticia</label>
+    <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="model.body" class="form-control"></textarea>
     
-    <label>Descripción</label>
+    <br/>
+    <label>Pie de la noticia</label>
     <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="model.imagen" class="form-control"></textarea>
     
     <br/>

@@ -1,7 +1,7 @@
-<h1>{{title}}</h1>
+<h3>{{title}}</h3>
 <br>
 <div *ngIf="!eventos">
-    Cargando Publicidad
+    Cargando Eventos
 </div>
 <div *ngIf="eventos">
     <ul>
@@ -9,6 +9,9 @@
             <strong>{{evento.titulo}}</strong>
             <br>
             {{evento.descripcion}}
+            <br>
+            <a (click)="onDelete(evento.id)" class="btn btn-md btn-danger">Eliminar </a>
         </li>
+        
     </ul>
 </div>

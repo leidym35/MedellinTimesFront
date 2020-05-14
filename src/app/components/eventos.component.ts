@@ -17,7 +17,9 @@ import { EventosService } from '../services/eventos.service'
     this.title = 'Eventos Medellin';
   }
   ngOnInit() {
-
+    this.getEvento()
+  }
+  getEvento(){
     this._eventosService.getEventos().subscribe(
       result => {
 
@@ -28,5 +30,15 @@ import { EventosService } from '../services/eventos.service'
         console.log(<any>error);
       }
     );
+  }
+  onDelete(id){
+    this._eventosService.deleteEventos(id).subscribe(
+      response=>{
+        this.getEvento()
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    )
   }
 }

@@ -12,6 +12,9 @@ import { EventosComponent } from './components/eventos.component';
 import { NoticiasComponent } from './components/noticias.component';
 import { HomeComponent } from './components/home.component';
 import { PublicidadAddComponent } from './components/publicidad-Add.component';
+import { EventosAddComponent } from './components/eventos-Add.component';
+import { NoticiasAddComponent } from './components/noticias-Add.component';
+
 @NgModule({
   declarations: [
    AppComponent,
@@ -19,7 +22,9 @@ import { PublicidadAddComponent } from './components/publicidad-Add.component';
    PublicidadComponent,
    EventosComponent,
    PublicidadAddComponent,
-   NoticiasComponent
+   NoticiasComponent,
+   EventosAddComponent,
+   NoticiasAddComponent,
   ],
   imports: [
     BrowserModule,

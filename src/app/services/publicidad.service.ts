@@ -17,5 +17,14 @@ import {GLOBAL} from '../services/global'
         getPublicidad(){
             return this._http.get(this.url+'publicidad').map(res=>(res))
         }
+ 
+        CreatePublicidad(publicidades:PublicidadModel){
+            return this._http.post(this.url+'publicidadSave',publicidades)
+            .map(res=>(res))
+        }
+  
+        deletePublicidad(id){
+            return this._http.get(this.url+'publicidadDelete/'+id).map(res=>(res))
+        }
 
     }

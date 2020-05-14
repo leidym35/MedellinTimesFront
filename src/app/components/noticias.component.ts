@@ -17,7 +17,10 @@ import { NoticiasService } from '../services/noticias.service'
     this.title = 'Noticias Medellin';
   }
   ngOnInit() {
-
+    this.getNoticia()
+    
+  }
+  getNoticia(){
     this._noticiasService.getNoticias().subscribe(
       result => {
 
@@ -28,6 +31,16 @@ import { NoticiasService } from '../services/noticias.service'
         console.log(<any>error);
       }
     );
+  }
+  onDelete(id){
+    this._noticiasService.deleteNoticia(id).subscribe(
+      response=>{
+        this.getNoticia()
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    )
   }
 }
  

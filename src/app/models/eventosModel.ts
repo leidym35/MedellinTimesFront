@@ -1,7 +1,7 @@
-export class PublicidadModel{
+export class EventosModel{
     constructor(
         public id:number,
         public titulo:string,
-        public imagen: string
+        public descripcion: string
     ){}
 }

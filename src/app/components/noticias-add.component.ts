@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { PublicidadService } from '../services/publicidad.service';
-import { PublicidadModel } from '../models/PublicidadModel' 
+import { NoticiasService } from '../services/noticias.service';
+import { NoticiasModel } from '../models/noticiasModel' 
 @Component({
-    selector: 'publicidad-add',
-    templateUrl: '../views/publicidad-add.html',
-    providers: [PublicidadService]
+    selector: 'noticias-add',
+    templateUrl: '../views/noticias-add.html',
+    providers: [NoticiasService]
 })
-export class PublicidadAddComponent implements OnInit{
+export class NoticiasAddComponent implements OnInit{
     public title: string;
-    model: PublicidadModel={id:0, titulo:'',imagen:''}
+    model: NoticiasModel={id:0, titulo:'',body:'',imagen:''}
 
 
     constructor(
-        private _publicidadService:PublicidadService,
+        private _noticiasService:NoticiasService,
         private _route:ActivatedRoute,
         private _router: Router
 
     ) {
-        this.title = 'Crear Publicidad';
+        this.title = 'Crear Noticia';
     }
     ngOnInit(){ }
     onSubmit(){
-        this._publicidadService.CreatePublicidad(this.model).subscribe(
+        this._noticiasService.CreateNoticia(this.model).subscribe(
             response => {
                 if(response=="insertado"){
                     alert("se ha insertado correctamente")

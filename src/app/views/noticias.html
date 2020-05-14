@@ -2,7 +2,7 @@
 <h3>{{title}}</h3>
 <br>
     <div *ngIf="!noticias">
-        Cargando Publicidad
+        Cargando Noticias
     </div>
     <div *ngIf="noticias">
         <ul>
@@ -12,6 +12,8 @@
                 {{noticia.body}}
                 <br>
                 {{noticia.imagen}}
+                <br>
+                <a (click)="onDelete(noticia.id)" class="btn btn-md btn-danger">Eliminar </a>
             </li>
         </ul>
     </div>

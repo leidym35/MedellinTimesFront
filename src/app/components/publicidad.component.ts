@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PublicidadService } from '../services/publicidad.service';
-import {PublicidadModel} from '../models/PublicidadModel'
+
 @Component({
   selector: 'publicidad',
   templateUrl: '../views/publicidad.html',
@@ -21,6 +21,10 @@ export class PublicidadComponent {
 
   ngOnInit() {
 
+  this.getPublicidades()
+  }
+
+  getPublicidades(){
     this._publicidadService.getPublicidad().subscribe(
       result => {
 
@@ -32,5 +36,17 @@ export class PublicidadComponent {
       }
     );
   }
+  
+  onDelete(id){
+    this._publicidadService.deletePublicidad(id).subscribe(
+      response=>{
+        this.getPublicidades()
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    )
+  }
+
 }
  
