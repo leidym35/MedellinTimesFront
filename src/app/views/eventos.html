@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<br>
+<div *ngIf="!eventos">
+    Cargando Publicidad
+</div>
+<div *ngIf="eventos">
+    <ul>
+        <li *ngFor="let evento of eventos">
+            <strong>{{evento.titulo}}</strong>
+            <br>
+            {{evento.descripcion}}
+        </li>
+    </ul>
+</div>

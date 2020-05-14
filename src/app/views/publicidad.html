@@ -1,0 +1,15 @@
+
+<h3>{{title}}</h3>
+<br>
+    <div *ngIf="!publicidad">
+        Cargando Publicidad
+    </div>
+    <div *ngIf="publicidad">
+        <ul>
+            <li *ngFor="let publicidades of publicidad">
+                <strong>{{publicidades.titulo}}</strong>
+                <br>
+                {{publicidades.imagen}}
+            </li>
+        </ul>
+    </div>
